@@ -1,0 +1,14 @@
+services:
+  portfolio:
+    build:
+      context: .
+      args:
+        VITE_EMAILJS_SERVICE_ID: ${VITE_EMAILJS_SERVICE_ID:-}
+        VITE_EMAILJS_TEMPLATE_ID: ${VITE_EMAILJS_TEMPLATE_ID:-}
+        VITE_EMAILJS_PUBLIC_KEY: ${VITE_EMAILJS_PUBLIC_KEY:-}
+    image: mohammed-portfolio:latest
+    container_name: mohammed-portfolio
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
